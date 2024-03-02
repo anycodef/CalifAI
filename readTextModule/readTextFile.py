@@ -11,7 +11,7 @@ def read_pdf(file_path):
         reader = PdfReader(file)
         text = ""
         for page_num in range(reader.pages.__len__()):
-            text += reader.pages[page_num].extract_text()
+            text += reader.pages[page_num].extract_text().replace("\n", " ")
     return text
 
 
